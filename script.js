@@ -19,8 +19,8 @@ check.addEventListener('click',()=>{
         return;
     }
 
-    if(guess === 0 ){
-        message.textContent = 'No Number!';
+    if(guess <= 0 ){
+        message.textContent = 'please enter a number between 1 and 20';
         return;
     }
 
