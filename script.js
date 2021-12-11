@@ -7,6 +7,7 @@ const check = document.querySelector('.check');
 const message = document.querySelector('.message');
 const again = document.querySelector('.again');
 
+
 check.addEventListener('click',()=>{
     const guess = Number(document.querySelector('.guess').value);
     let score = Number(document.querySelector('.score').textContent);
@@ -24,18 +25,25 @@ check.addEventListener('click',()=>{
         return;
     }
 
-    if(guess > sercurityNumber){
-        message.textContent = 'Too high';
+    if(guess !== sercurityNumber){
+        message.textContent = guess > sercurityNumber?'Too high':'Too low';
         score -= 1;
         document.querySelector('.score').textContent = String(score);
         return
     }
-    if(guess < sercurityNumber){
-        message.textContent = 'Too low';
-        score -= 1
-        document.querySelector('.score').textContent = String(score);
-        return
-    }
+
+    // if(guess > sercurityNumber){
+    //     message.textContent = 'Too high';
+    //     score -= 1;
+    //     document.querySelector('.score').textContent = String(score);
+    //     return
+    // }
+    // if(guess < sercurityNumber){
+    //     message.textContent = 'Too low';
+    //     score -= 1
+    //     document.querySelector('.score').textContent = String(score);
+    //     return
+    // }
     if( guess ===  sercurityNumber){
         message.textContent = "Afarin zahmat keshidi"
         document.querySelector('body').style.backgroundColor = 'green'
